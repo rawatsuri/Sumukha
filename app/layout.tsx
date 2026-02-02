@@ -30,6 +30,7 @@ const oswald = Oswald({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://sumukhasportsarena.com'),
   title: 'Sumukha Sports Arena | FIFA Certified 7-a-side Football Turf Dehradun',
   description: 'Play on our FIFA Certified 7-a-side Football Turf & Cricket Box in Dehradun. Premium turf with floodlights, ₹1500 per slot. Book now: 09456700459. Located on Saharanpur Road near Hotel Laxmi Palace.',
   keywords: 'Sumukha Sports Arena, Football Turf Dehradun, Cricket Box Dehradun, 7-a-side football, FIFA certified turf, Sports ground Dehradun, Saharanpur Road, Majra Dehradun, Football ground booking, Turf rental Dehradun',
