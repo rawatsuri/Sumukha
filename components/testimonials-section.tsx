@@ -10,7 +10,7 @@ const testimonials = [
     id: 1,
     name: 'Abhishek Rawat',
     role: 'Verified Google Review',
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80',
+    initials: 'AR',
     rating: 5,
     text: "Amazing turf quality! The 7-a-side field is perfect for our weekend matches. The lighting is excellent for night games. The staff is very cooperative and the booking process is smooth. Best football turf in Dehradun!",
   },
@@ -18,7 +18,7 @@ const testimonials = [
     id: 2,
     name: 'Karan Singh',
     role: 'Verified Google Review',
-    image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80',
+    initials: 'KS',
     rating: 5,
     text: "Sumukha Sports Arena has the best turf in Dehradun. The FIFA-certified surface gives professional feel. We play here regularly and the maintenance is top-notch. The location on Saharanpur Road is easily accessible too.",
   },
@@ -26,7 +26,7 @@ const testimonials = [
     id: 3,
     name: 'Piyush Kumar',
     role: 'Verified Google Review',
-    image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=200&q=80',
+    initials: 'PK',
     rating: 5,
     text: "Great experience! The cricket box is well-maintained and the football turf is fantastic. The floodlights make evening games enjoyable. Highly recommended for anyone looking for quality sports facilities in Dehradun.",
   },
@@ -34,15 +34,15 @@ const testimonials = [
     id: 4,
     name: 'Ankit Sharma',
     role: 'Verified Justdial Review',
-    image: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=200&q=80',
+    initials: 'AS',
     rating: 5,
-    text: "Excellent sports facility in Dehradun! The 7-a-side football turf is FIFA certified and the cricket practice box is very useful. Good parking space and the staff is friendly. Worth every penny at ₹1500 per slot.",
+    text: "Excellent sports facility in Dehradun! The 7-a-side football turf is FIFA certified and the cricket practice box is very useful. Good parking space and the staff is friendly. Worth every penny at \u20B91500 per slot.",
   },
   {
     id: 5,
     name: 'Rohit Negi',
     role: 'Verified Google Review',
-    image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=200&q=80',
+    initials: 'RN',
     rating: 5,
     text: "Love playing here! The artificial turf quality is premium and the lighting system is perfect for night matches. Opening till midnight is a big plus for working professionals like me. Best sports arena in Dehradun!",
   },
@@ -123,7 +123,7 @@ export function TestimonialsSection() {
             What Players <span className="text-turf-primary">Say</span>
           </h2>
           <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-            Don't just take our word for it. Here's what sports enthusiasts have to say about their 
+            Don't just take our word for it. Here's what sports enthusiasts have to say about their
             experience at Sumukha Sports Arena. Rated 4.6★ on Google (67 reviews) and 4.8★ on Justdial!
           </p>
         </motion.div>
@@ -166,12 +166,8 @@ export function TestimonialsSection() {
 
                     {/* Author */}
                     <div className="flex items-center space-x-4">
-                      <div className="relative w-14 h-14 rounded-full overflow-hidden">
-                        <img
-                          src={testimonial.image}
-                          alt={testimonial.name}
-                          className="w-full h-full object-cover"
-                        />
+                      <div className="relative w-14 h-14 rounded-full overflow-hidden bg-turf-gold flex items-center justify-center">
+                        <span className="text-turf-charcoal font-bold text-xl">{testimonial.initials}</span>
                       </div>
                       <div>
                         <h4 className="font-semibold text-turf-charcoal">
@@ -207,11 +203,10 @@ export function TestimonialsSection() {
             <button
               key={index}
               onClick={() => emblaApi?.scrollTo(index)}
-              className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                selectedIndex === index
-                  ? 'bg-turf-primary w-8'
-                  : 'bg-gray-300 hover:bg-gray-400'
-              }`}
+              className={`w-3 h-3 rounded-full transition-all duration-300 ${selectedIndex === index
+                ? 'bg-turf-primary w-8'
+                : 'bg-gray-300 hover:bg-gray-400'
+                }`}
             />
           ))}
         </div>

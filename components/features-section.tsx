@@ -2,14 +2,14 @@
 
 import React from 'react'
 import { motion } from 'framer-motion'
-import { 
-  CheckCircle2, 
-  Lightbulb, 
-  ShowerHead, 
-  Car, 
-  Droplets, 
-  Stethoscope, 
-  ShoppingBag, 
+import {
+  CheckCircle2,
+  Lightbulb,
+  ShowerHead,
+  Car,
+  Droplets,
+  Stethoscope,
+  ShoppingBag,
   Coffee,
   Shield,
   Clock,
@@ -103,12 +103,16 @@ const containerVariants = {
 }
 
 const itemVariants = {
-  hidden: { opacity: 0, y: 30 },
+  hidden: { opacity: 0, y: 50, scale: 0.9 },
   visible: {
     opacity: 1,
     y: 0,
+    scale: 1,
     transition: {
-      duration: 0.6,
+      type: 'spring',
+      stiffness: 100,
+      damping: 15,
+      duration: 0.8,
     },
   },
 }
@@ -139,7 +143,7 @@ export function FeaturesSection() {
             Features & <span className="text-turf-gold">Amenities</span>
           </h2>
           <p className="text-white/70 text-lg max-w-2xl mx-auto">
-            Everything you need for the perfect football experience. 
+            Everything you need for the perfect football experience.
             We have thought of every detail so you can focus on your game.
           </p>
         </motion.div>
@@ -156,8 +160,8 @@ export function FeaturesSection() {
             <motion.div
               key={feature.title}
               variants={itemVariants}
-              whileHover={{ 
-                y: -10, 
+              whileHover={{
+                y: -10,
                 rotateY: 5,
                 transition: { duration: 0.3 }
               }}

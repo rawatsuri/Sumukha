@@ -6,33 +6,33 @@ import { Trophy, Users, Clock, Calendar } from 'lucide-react'
 import Image from 'next/image'
 
 const stats = [
-  { 
-    icon: Trophy, 
-    value: 500, 
-    suffix: '+', 
+  {
+    icon: Trophy,
+    value: 500,
+    suffix: '+',
     label: 'Matches Played',
-    description: 'Successful games hosted' 
+    description: 'Successful games hosted'
   },
-  { 
-    icon: Users, 
-    value: 2000, 
-    suffix: '+', 
+  {
+    icon: Users,
+    value: 2000,
+    suffix: '+',
     label: 'Happy Players',
-    description: 'Satisfied customers' 
+    description: 'Satisfied customers'
   },
-  { 
-    icon: Clock, 
-    value: 17, 
-    suffix: ' hrs', 
+  {
+    icon: Clock,
+    value: 17,
+    suffix: ' hrs',
     label: 'Daily Operations',
-    description: '7:00 AM - 12:00 AM' 
+    description: '7:00 AM - 12:00 AM'
   },
-  { 
-    icon: Calendar, 
-    value: 2, 
-    suffix: '+ yrs', 
+  {
+    icon: Calendar,
+    value: 2,
+    suffix: '+ yrs',
     label: 'Experience',
-    description: 'Serving Dehradun' 
+    description: 'Serving Dehradun'
   },
 ]
 
@@ -40,17 +40,17 @@ const features = [
   {
     title: 'FIFA Certified 7-a-side Turf',
     description: 'Our artificial grass meets international FIFA standards for 7-a-side football, providing optimal ball roll, bounce, and player safety.',
-    image: 'https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1529900748604-07564a03e7a6?auto=format&fit=crop&w=800&q=80', // Night turf
   },
   {
     title: 'Cricket Practice Box',
     description: 'Dedicated cricket box with high-quality surface perfect for batting and bowling practice. Netted enclosure for safe practice sessions.',
-    image: 'https://images.unsplash.com/photo-1531417446484-597a3360eddc?auto=format&fit=crop&w=800&q=80',
+    image: 'https://turftown.s3.ap-south-1.amazonaws.com/super_admin/tt-1732112437491.webp', // User provided cricket image
   },
   {
     title: 'Professional Floodlights',
     description: 'High-quality LED floodlights illuminate the entire field for perfect night visibility. Play comfortably even after sunset.',
-    image: 'https://images.unsplash.com/photo-1551958219-acbc608c6377?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1517927033932-b3d18e61fb3a?auto=format&fit=crop&w=800&q=80', // Lights
   },
 ]
 
@@ -122,7 +122,7 @@ export function AboutSection() {
             transition={{ delay: 0.4 }}
             className="text-gray-600 text-lg max-w-2xl mx-auto"
           >
-            Sumukha Sports Arena brings world-class sports facilities to Dehradun. Our FIFA-certified 
+            Sumukha Sports Arena brings world-class sports facilities to Dehradun. Our FIFA-certified
             7-a-side football turf and cricket box provide the perfect venue for sports enthusiasts.
           </motion.p>
         </motion.div>
@@ -210,13 +210,14 @@ export function AboutSection() {
                 </p>
                 <motion.button
                   whileHover={{ x: 5 }}
+                  onClick={() => document.getElementById('features')?.scrollIntoView({ behavior: 'smooth' })}
                   className="inline-flex items-center text-turf-primary font-semibold group"
                 >
                   <span>Learn More</span>
-                  <svg 
-                    className="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform" 
-                    fill="none" 
-                    viewBox="0 0 24 24" 
+                  <svg
+                    className="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform"
+                    fill="none"
+                    viewBox="0 0 24 24"
                     stroke="currentColor"
                   >
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -241,7 +242,7 @@ export function AboutSection() {
                 Ready to Experience the Difference?
               </h3>
               <p className="text-white/80 text-lg mb-8 max-w-2xl mx-auto">
-                Join thousands of players who have made Premier Turf Arena their home ground. 
+                Join thousands of players who have made Premier Turf Arena their home ground.
                 Book your slot today and feel the premium difference.
               </p>
               <motion.button

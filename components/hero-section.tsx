@@ -6,8 +6,8 @@ import { ChevronDown, Phone, MapPin, ArrowRight } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 
 const heroHeadlines = [
-  'FIFA Certified 7-a-side',
-  'Cricket Box & Football',
+  'FIFA Certified 7-a-side Football',
+  'Professional Cricket Box',
   'Play Like a Pro',
 ]
 
@@ -37,7 +37,7 @@ export function HeroSection() {
       {/* Background Video/Image */}
       <div className="absolute inset-0 z-0">
         {/* Using high-quality image for now - can be replaced with video */}
-        <div 
+        <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
             backgroundImage: `url('https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=1920&q=80')`,
@@ -45,7 +45,7 @@ export function HeroSection() {
         />
         {/* Fallback gradient overlay in case image fails */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/50 to-black/70" />
-        
+
         {/* Animated particles overlay for depth */}
         <div className="absolute inset-0 opacity-30">
           <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-turf-gold rounded-full animate-float" />
@@ -56,7 +56,7 @@ export function HeroSection() {
       </div>
 
       {/* Main Content */}
-      <motion.div 
+      <motion.div
         className="relative z-10 h-full flex flex-col justify-center items-center px-4 sm:px-6 lg:px-8"
         style={{ y: y1, opacity }}
       >
@@ -84,7 +84,7 @@ export function HeroSection() {
                 <motion.span
                   key={headline}
                   initial={{ opacity: 0, y: 20 }}
-                  animate={{ 
+                  animate={{
                     opacity: currentHeadline === index ? 1 : 0,
                     y: currentHeadline === index ? 0 : -20,
                     display: currentHeadline === index ? 'block' : 'none'
@@ -105,7 +105,7 @@ export function HeroSection() {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="text-lg sm:text-xl md:text-2xl text-white/80 font-light max-w-2xl mx-auto mb-10"
           >
-            Experience world-class sports on our FIFA-certified 7-a-side football turf and cricket box. 
+            Experience world-class sports on our FIFA-certified 7-a-side football turf and professional cricket box.
             Located on Saharanpur Road, Dehradun. Perfect for matches, practice, and tournaments.
           </motion.p>
 
@@ -124,15 +124,6 @@ export function HeroSection() {
             >
               <span>Book Your Slot</span>
               <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-            </Button>
-            <Button
-              variant="outline"
-              size="xl"
-              className="border-white/30 text-white hover:bg-white/10 hover:text-turf-gold"
-              onClick={() => scrollToSection('#virtual-tour')}
-            >
-              <MapPin className="w-5 h-5 mr-2" />
-              <span>Take Virtual Tour</span>
             </Button>
           </motion.div>
 

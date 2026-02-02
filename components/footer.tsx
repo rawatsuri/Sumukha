@@ -2,10 +2,10 @@
 
 import React from 'react'
 import { motion } from 'framer-motion'
-import { 
-  MapPin, 
-  Phone, 
-  Mail, 
+import {
+  MapPin,
+  Phone,
+  Mail,
   Clock,
   Instagram,
   Facebook,
@@ -73,7 +73,7 @@ export function Footer() {
               </span>
             </div>
             <p className="text-white/60 mb-6 leading-relaxed">
-              FIFA Certified 7-a-side Football Turf & Cricket Box in Dehradun. 
+              FIFA Certified 7-a-side Football Turf & Cricket Box in Dehradun.
               Located on Saharanpur Road. Play like a pro!
             </p>
             <div className="flex space-x-3">
@@ -188,8 +188,29 @@ export function Footer() {
             <p className="text-white/40 text-sm text-center md:text-left">
               © {new Date().getFullYear()} Sumukha Sports Arena. All rights reserved.
             </p>
-            <p className="text-white/40 text-sm flex items-center">
-              Made with <Heart className="w-4 h-4 text-red-500 mx-1 fill-current" /> for football lovers
+            <p className="text-white/40 text-sm flex items-center relative z-50">
+              Made by
+              <motion.a
+                href="https://www.instagram.com/_suri31/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="ml-1 font-semibold text-turf-gold inline-flex items-center gap-1"
+                whileHover={{
+                  scale: 1.1,
+                  textShadow: "0px 0px 8px rgb(255, 215, 0)",
+                  color: "#ffffff"
+                }}
+                transition={{ type: "spring", stiffness: 400, damping: 10 }}
+              >
+                Suraj Rawat
+                <motion.span
+                  initial={{ opacity: 0, x: -5 }}
+                  whileHover={{ opacity: 1, x: 0 }}
+                  className="text-xs"
+                >
+                  ↗
+                </motion.span>
+              </motion.a>
             </p>
             <div className="flex items-center space-x-6 text-sm">
               <a href="#" className="text-white/40 hover:text-turf-gold transition-colors">Privacy Policy</a>

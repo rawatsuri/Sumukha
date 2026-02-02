@@ -2,11 +2,11 @@
 
 import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { 
-  Play, 
-  X, 
-  MapPin, 
-  ChevronRight, 
+import {
+  Play,
+  X,
+  MapPin,
+  ChevronRight,
   ChevronLeft,
   Maximize2,
   Compass,
@@ -19,7 +19,7 @@ const tourSpots = [
     id: 1,
     name: 'Main Turf Field',
     description: 'Our flagship FIFA-certified artificial turf spanning 50m x 30m with professional markings.',
-    image: 'https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=1920&q=80',
+    image: 'https://images.unsplash.com/photo-1529900748604-07564a03e7a6?auto=format&fit=crop&w=1920&q=80',
     hotspots: [
       { x: 30, y: 40, label: 'Goal Post', description: 'Professional 5-a-side goals' },
       { x: 70, y: 50, label: 'Center Circle', description: 'Perfect turf maintenance' },
@@ -29,7 +29,7 @@ const tourSpots = [
     id: 2,
     name: 'Night View Arena',
     description: 'Experience the magic of night games under our 200+ lux LED floodlighting system.',
-    image: 'https://images.unsplash.com/photo-1551958219-acbc608c6377?auto=format&fit=crop&w=1920&q=80',
+    image: 'https://images.unsplash.com/photo-1517927033932-b3d18e61fb3a?auto=format&fit=crop&w=1920&q=80',
     hotspots: [
       { x: 50, y: 20, label: 'LED Floodlights', description: 'Professional stadium lighting' },
       { x: 25, y: 60, label: 'Player Action', description: 'Perfect visibility for night games' },
@@ -39,7 +39,7 @@ const tourSpots = [
     id: 3,
     name: 'Changing Rooms',
     description: 'Clean and spacious changing facilities equipped with showers and secure lockers.',
-    image: 'https://images.unsplash.com/photo-1576678927484-cc907957088c?auto=format&fit=crop&w=1920&q=80',
+    image: 'https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&w=1920&q=80',
     hotspots: [
       { x: 40, y: 35, label: 'Locker Area', description: 'Secure personal storage' },
       { x: 65, y: 55, label: 'Shower Facility', description: 'Hot water available' },
@@ -49,7 +49,7 @@ const tourSpots = [
     id: 4,
     name: 'Parking & Entrance',
     description: 'Spacious parking area with security and easy access to the main facility.',
-    image: 'https://images.unsplash.com/photo-1506521781263-d8422e82f27a?auto=format&fit=crop&w=1920&q=80',
+    image: 'https://images.unsplash.com/photo-1595435934249-5df7ed86e1c0?auto=format&fit=crop&w=1920&q=80',
     hotspots: [
       { x: 60, y: 45, label: 'Main Entrance', description: 'Welcoming reception area' },
       { x: 20, y: 70, label: 'Parking Lot', description: 'Free parking for 50+ vehicles' },
@@ -75,7 +75,7 @@ export function VirtualTourSection() {
   return (
     <section id="virtual-tour" className="py-20 sm:py-32 bg-gray-900 relative overflow-hidden">
       {/* Background Image with Parallax */}
-      <div 
+      <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30"
         style={{
           backgroundImage: `url('${tourSpots[currentSpot].image}')`,
@@ -100,7 +100,7 @@ export function VirtualTourSection() {
             Virtual <span className="text-turf-gold">Tour</span>
           </h2>
           <p className="text-white/60 text-lg max-w-2xl mx-auto">
-            Explore our facility from every angle. Navigate through different areas and discover 
+            Explore our facility from every angle. Navigate through different areas and discover
             what makes Premier Turf Arena truly special.
           </p>
         </motion.div>
@@ -129,7 +129,7 @@ export function VirtualTourSection() {
                   alt={tourSpots[currentSpot].name}
                   className="w-full h-full object-cover"
                 />
-                
+
                 {/* Hotspots */}
                 {tourSpots[currentSpot].hotspots.map((hotspot, index) => (
                   <motion.div
@@ -148,7 +148,7 @@ export function VirtualTourSection() {
                       <div className="relative w-8 h-8 bg-turf-gold rounded-full flex items-center justify-center shadow-lg shadow-yellow-500/50 hover:scale-110 transition-transform">
                         <MapPin className="w-4 h-4 text-turf-charcoal" />
                       </div>
-                      
+
                       {/* Tooltip */}
                       <AnimatePresence>
                         {activeHotspot === index && (
@@ -229,11 +229,10 @@ export function VirtualTourSection() {
                   setCurrentSpot(index)
                   setActiveHotspot(null)
                 }}
-                className={`relative w-20 h-14 rounded-lg overflow-hidden transition-all duration-300 ${
-                  currentSpot === index 
-                    ? 'ring-2 ring-turf-gold ring-offset-2 ring-offset-gray-900' 
-                    : 'opacity-60 hover:opacity-100'
-                }`}
+                className={`relative w-20 h-14 rounded-lg overflow-hidden transition-all duration-300 ${currentSpot === index
+                  ? 'ring-2 ring-turf-gold ring-offset-2 ring-offset-gray-900'
+                  : 'opacity-60 hover:opacity-100'
+                  }`}
               >
                 <img
                   src={spot.image}
@@ -287,7 +286,7 @@ export function VirtualTourSection() {
             >
               <X className="w-6 h-6 text-white" />
             </button>
-            
+
             <motion.div
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
@@ -296,14 +295,17 @@ export function VirtualTourSection() {
               onClick={(e) => e.stopPropagation()}
             >
               {/* Video Placeholder - Replace with actual video embed */}
-              <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-gray-800 to-gray-900">
-                <div className="text-center">
-                  <div className="w-20 h-20 bg-turf-gold/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Play className="w-10 h-10 text-turf-gold" />
-                  </div>
-                  <p className="text-white/60 text-lg">Facility Walkthrough Video</p>
-                  <p className="text-white/40 text-sm mt-2">Coming Soon</p>
-                </div>
+              <div className="w-full h-full flex items-center justify-center bg-black">
+                <iframe
+                  width="100%"
+                  height="100%"
+                  src="https://www.instagram.com/reel/DULzJFyEyEn/embed"
+                  title="Facility Tour"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="w-full h-full"
+                />
               </div>
             </motion.div>
           </motion.div>

@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X, Phone } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import Image from 'next/image'
 
 const navItems = [
   { name: 'Home', href: '#home' },
@@ -56,11 +57,10 @@ export function Header() {
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.6, ease: 'easeOut' }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          isScrolled
-            ? 'bg-turf-dark/95 backdrop-blur-md shadow-lg py-3'
-            : 'bg-transparent py-5'
-        }`}
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
+          ? 'bg-turf-dark/95 backdrop-blur-md shadow-lg py-3'
+          : 'bg-transparent py-5'
+          }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between">
@@ -75,11 +75,16 @@ export function Header() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <div className="w-10 h-10 bg-turf-gold rounded-full flex items-center justify-center">
-                <span className="text-turf-dark font-bold text-lg font-montserrat">S</span>
+              <div className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-turf-gold">
+                <Image
+                  src="/logo.jpg"
+                  alt="Sumukha Sports Arena Logo"
+                  fill
+                  className="object-cover"
+                />
               </div>
               <span className="text-white font-montserrat font-bold text-xl hidden sm:block">
-                Sumukha<span className="text-turf-gold">Sports</span>
+                Sumukha<span className="text-turf-gold">Sports Arena</span>
               </span>
             </motion.a>
 
@@ -93,11 +98,10 @@ export function Header() {
                     e.preventDefault()
                     scrollToSection(item.href)
                   }}
-                  className={`px-4 py-2 text-sm font-medium transition-all duration-300 rounded-full ${
-                    activeSection === item.href.substring(1)
-                      ? 'text-turf-gold bg-white/10'
-                      : 'text-white/80 hover:text-turf-gold hover:bg-white/5'
-                  }`}
+                  className={`px-4 py-2 text-sm font-medium transition-all duration-300 rounded-full ${activeSection === item.href.substring(1)
+                    ? 'text-turf-gold bg-white/10'
+                    : 'text-white/80 hover:text-turf-gold hover:bg-white/5'
+                    }`}
                 >
                   {item.name}
                 </a>
@@ -166,11 +170,10 @@ export function Header() {
                     initial={{ opacity: 0, x: 20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: index * 0.1 }}
-                    className={`px-4 py-3 text-lg font-medium rounded-lg transition-all duration-300 ${
-                      activeSection === item.href.substring(1)
-                        ? 'text-turf-gold bg-white/10'
-                        : 'text-white/80 hover:text-turf-gold hover:bg-white/5'
-                    }`}
+                    className={`px-4 py-3 text-lg font-medium rounded-lg transition-all duration-300 ${activeSection === item.href.substring(1)
+                      ? 'text-turf-gold bg-white/10'
+                      : 'text-white/80 hover:text-turf-gold hover:bg-white/5'
+                      }`}
                   >
                     {item.name}
                   </motion.a>

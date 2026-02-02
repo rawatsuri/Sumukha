@@ -2,27 +2,27 @@ import type { Metadata } from 'next'
 import { Inter, Montserrat, Bebas_Neue, Oswald } from 'next/font/google'
 import './globals.css'
 
-const inter = Inter({ 
+const inter = Inter({
   subsets: ['latin'],
   variable: '--font-inter',
   display: 'swap',
 })
 
-const montserrat = Montserrat({ 
+const montserrat = Montserrat({
   subsets: ['latin'],
   variable: '--font-montserrat',
   display: 'swap',
   weight: ['400', '500', '600', '700', '800', '900'],
 })
 
-const bebasNeue = Bebas_Neue({ 
+const bebasNeue = Bebas_Neue({
   subsets: ['latin'],
   variable: '--font-bebas',
   display: 'swap',
   weight: '400',
 })
 
-const oswald = Oswald({ 
+const oswald = Oswald({
   subsets: ['latin'],
   variable: '--font-oswald',
   display: 'swap',
@@ -69,8 +69,8 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${montserrat.variable} ${bebasNeue.variable} ${oswald.variable}`}>
       <head>
-        <link rel="icon" href="/favicon.svg" sizes="any" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.svg" />
+        <link rel="icon" href="/logo.jpg" sizes="any" />
+        <link rel="apple-touch-icon" href="/logo.jpg" />
         <meta name="theme-color" content="#1B5E20" />
         <script
           type="application/ld+json"
